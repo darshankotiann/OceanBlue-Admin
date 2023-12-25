@@ -43,6 +43,7 @@ const ProductModal = ({ showModal, setShowModal }) => {
                 .then((res) => {
                     console.log("Product is Added Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
+                    window.location.reload();
                 })
                 .catch((error) => {
                     console.log(error)
