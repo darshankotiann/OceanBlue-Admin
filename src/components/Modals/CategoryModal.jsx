@@ -19,7 +19,6 @@ const CategoryModal = ({ showModal, setShowModal }) => {
             setImage(showModal?.data?.image)
         }
     }, [showModal])
-    console.log(data)
     const headers = {
         'authorization': `Bearer ${adminToken}`
     }
@@ -38,10 +37,11 @@ const CategoryModal = ({ showModal, setShowModal }) => {
                     console.log(error)
                 })
         } else {
-            axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/add`, { ...categoryData, image: image }, { headers: headers })
+            axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/add`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
                     console.log("Data is Added Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
+                    window.location.reload();
                 })
                 .catch((error) => {
                     console.log(error)
@@ -105,7 +105,7 @@ const CategoryModal = ({ showModal, setShowModal }) => {
                                 <button onClick={() => setShowModal({ show: false, update: false, data: undefined })} type="button" className="w-full flex align-middle items-center  focus:outline-none text-[#0064FF] justify-center focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 border"> Close</button>
                             </div>
                             <div className="w-1/2 flex justify-end">
-                                <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-[#0064FF] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2"> {showModal.update ? "Edit Category" : "Add Product"}</button>
+                                <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-[#0064FF] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2"> {showModal.update ? "Edit Category" : "Add Category"}</button>
                             </div>
                         </div>
                     </form>

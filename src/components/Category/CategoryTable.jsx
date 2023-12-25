@@ -27,7 +27,7 @@ const CategoryTable = ({ showModal, setShowModal }) => {
             <div className="px-10 mb-4 gap-3 w-full grid grid-cols-12">
                 <input onChange={handleFilter} type="email" id="email" class="col-span-8 bg-gray-50 text-gray-900 text-sm rounded-lg block  px-5 py-3 border-2 " placeholder="Search Product" />
                 <button type="button" onClick={() => setShowModal({ show: true, update: false, data: undefined })} class="  flex justify-center items-center col-span-4 text-white bg-[#0064FF] hover:bg-[#0064FF]  font-medium rounded-lg text-sm px-10 py-3"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=" mr-2 lucide lucide-plus"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
-                    Add Product
+                    Add Category
                 </button>
             </div>
             <div class="relative px-10 overflow-x-auto h-[75vh] ">
