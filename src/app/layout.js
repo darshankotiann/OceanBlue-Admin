@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <script
+        async
           src="https://upload-widget.cloudinary.com/global/all.js"
           onLoad={() => {
             console.log('Script has loaded')

@@ -34,7 +34,7 @@ const SPSEnquiryTable = () => {
                     <tbody>
                         {spsServiceRequests?.map((spsServiceRequest) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={spsServiceRequest._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {spsServiceRequest?.vendorID?.fullname}
                                     </td>

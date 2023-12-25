@@ -58,7 +58,7 @@ const ServiceEnquiryTable = ({ }) => {
                     <tbody>
                         {searchResult?.map((serviceRequest) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={serviceRequest._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {serviceRequest?.vendorID?.fullname}
                                     </td>

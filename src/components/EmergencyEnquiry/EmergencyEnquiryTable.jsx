@@ -57,7 +57,7 @@ const EmergencyEnquiry = ({ }) => {
                     <tbody>
                         {searchResult?.map((EmergencyserviceRequest) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={EmergencyserviceRequest._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {EmergencyserviceRequest?.vendorID?.fullname}
                                     </td>

@@ -116,7 +116,7 @@ const ProductModal = ({ showModal, setShowModal }) => {
                                     <select id="countries" onChange={onChangeData} name="category" value={data?.category._id} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-4">
                                         {categories?.map((category) => {
                                             return (
-                                                <option name="category" value={category._id}>{category.name}</option>
+                                                <option key={category._id} name="category" value={category._id}>{category.name}</option>
                                             )
                                         })}
                                     </select>

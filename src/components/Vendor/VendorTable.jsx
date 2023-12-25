@@ -62,7 +62,7 @@ const VendorTable = ({ showModal, setShowModal }) => {
                     <tbody>
                         {searchResult?.map((vendor) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={vendor._id} class="bg-white border-b rounded-lg">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                         <img className="w-20 h-20 rounded-lg" src={vendor.image} />
                                     </th>

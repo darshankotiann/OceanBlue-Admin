@@ -58,7 +58,7 @@ const ResaleEnquiry = ({ }) => {
                     <tbody>
                         {searchResult?.map((resaleServiceRequest) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={resaleServiceRequest._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {resaleServiceRequest?.vendorID?.fullname}
                                     </td>

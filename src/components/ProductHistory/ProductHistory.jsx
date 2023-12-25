@@ -53,7 +53,7 @@ const ProducHistoryTable = () => {
                     <tbody>
                         {searchResult?.map((productHistory) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={productHistory._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {productHistory?.vendorID?.fullname}
                                     </td>

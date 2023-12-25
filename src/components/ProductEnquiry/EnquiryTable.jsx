@@ -56,7 +56,7 @@ const EnquiryTable = () => {
                     <tbody>
                         {searchResult?.map((productEnquiry) => {
                             return (
-                                <tr class="bg-white border-b rounded-lg">
+                                <tr key={productEnquires._id} class="bg-white border-b rounded-lg">
                                     <td class="px-6 py-4">
                                         {productEnquiry?.vendorID?.fullname}
                                     </td>
