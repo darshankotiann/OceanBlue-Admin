@@ -26,7 +26,7 @@ const GalleryModal = ({ showModal, setShowModal }) => {
 
     const handleCategory = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3001/gallery/add`,
+        axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/gallery/add`,
             {
                 url: image.url,
                 type: image.type

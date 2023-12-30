@@ -58,8 +58,8 @@ const GalleryTable = ({ showModal, setShowModal }) => {
                                     })
                             }
                             return (
-                                <tr class="bg-white border-b rounded-lg">
-                                    <th key={gallery._id} scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                <tr key={gallery._id} class="bg-white border-b rounded-lg">
+                                    <th  scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
 
                                         {gallery.type == "image" ? <img className="w-20 h-20 rounded-lg" src={gallery.url} /> :
                                             <video src={gallery?.url} className="w-20 h-20 rounded-lg" />
