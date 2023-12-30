@@ -59,8 +59,8 @@ const CategoryModal = ({ showModal, setShowModal }) => {
                 <div className={!showModal.show ? "bg-white duration-700 w-4/5 fixed top-20 -right-full" : "bg-white h-screen w-4/5 duration-1000 fixed top-20 right-0"}>
                     <div className="bg-[#F9FAFB] p-8 w-full flex justify-end">
                         <div className="w-1/2">
-                            <h1 className=" text-lg font-bold text-gray-700">{showModal.update ? "Edit Product" : "Add Products"}</h1>
-                            <p>{showModal.update ? "Edit your product and necessary information from here" : "Add your product and necessary information from here"}</p>
+                            <h1 className=" text-lg font-bold text-gray-700">{showModal.update ? "Edit Category" : "Add Category"}</h1>
+                            <p>{showModal.update ? "Edit your category and necessary information from here" : "Add your category and necessary information from here"}</p>
                         </div>
                         <div className="w-1/2 flex justify-end">
                             <div onClick={() => setShowModal({ show: false, update: false, data: undefined })} className="flex items-center justify-center p-3 shadow-md rounded-full h-12 w-12 text-center mr-4 text-lg text-black bg-white">
