@@ -35,6 +35,9 @@ const ServiceEnquiryTable = ({ }) => {
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500  ">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0 ">
                         <tr >
+                        <th scope="col" class="px-6 py-3">
+                                Token Number
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Vendor Name
                             </th>
@@ -59,6 +62,9 @@ const ServiceEnquiryTable = ({ }) => {
                         {searchResult?.map((serviceRequest) => {
                             return (
                                 <tr key={serviceRequest._id} class="bg-white border-b rounded-lg">
+                                   <td class="px-6 py-4">
+                                        {serviceRequest?._id.slice(18)}
+                                    </td>
                                     <td class="px-6 py-4">
                                         {serviceRequest?.vendorID?.fullname}
                                     </td>

@@ -1,5 +1,5 @@
 
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import EnquiryViewModal from "../Modals/EnquiryViewModal"
 import { useProductEnquiryContext } from "@/Context/ProductEnquiryContext";
 
@@ -34,6 +34,9 @@ const EnquiryTable = () => {
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0 ">
                         <tr >
                             <th scope="col" class="px-6 py-3">
+                                Token Number
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Vendor Name
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -55,8 +58,12 @@ const EnquiryTable = () => {
                     </thead>
                     <tbody>
                         {searchResult?.map((productEnquiry) => {
+
                             return (
                                 <tr key={productEnquires._id} class="bg-white border-b rounded-lg">
+                                    <td class="px-6 py-4">
+                                        {productEnquiry?._id.slice(18)}
+                                    </td>
                                     <td class="px-6 py-4">
                                         {productEnquiry?.vendorID?.fullname}
                                     </td>
@@ -81,11 +88,11 @@ const EnquiryTable = () => {
                                         </div>
                                     </td>
                                 </tr>
-                            )
+                    )
                         })}
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
+        </div >
             <EnquiryViewModal showModal={showModal} setShowModal={setShowModal} />
         </>)
 }
