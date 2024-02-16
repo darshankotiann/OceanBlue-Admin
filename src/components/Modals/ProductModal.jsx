@@ -115,6 +115,7 @@ const ProductModal = ({ showModal, setShowModal }) => {
                                 <div className="w-full">
                                     <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
                                     <select id="countries" onChange={onChangeData} name="category" value={data?.category._id} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-4">
+                                        <option value=""></option>
                                         {categories?.map((category) => {
                                             return (
                                                 <option key={category._id} name="category" value={category._id}>{category.name}</option>

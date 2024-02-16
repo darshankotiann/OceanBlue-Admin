@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.mainHeight {
-  height: calc(100vh-5rem);
-}
+  .mainHeight {
+    height: calc(100vh-5rem);
+  }
 
-::-webkit-scrollbar {
-  width: 0;
-}
+  ::-webkit-scrollbar {
+    width: 0;
+  }

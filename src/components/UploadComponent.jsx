@@ -8,8 +8,8 @@ const UploadComponent = ({ image, setImage, onChangeData, type = "default", chil
     useEffect(() => {
         cloudinaryRef.current = window.cloudinary;
         widgetRef.current = cloudinaryRef?.current?.createUploadWidget({
-            cloudName: "dx75hokis",
-            uploadPreset: "olq8fg7t",
+            cloudName: "drqvunoh1",
+            uploadPreset: "qffm3knk",
             multiple: false,
             showAdvancedOptions: false,
             showUploadMoreButton: false,

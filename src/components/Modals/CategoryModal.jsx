@@ -6,11 +6,11 @@ import { useAuthContext } from "@/Context/AuthContext"
 const CategoryModal = ({ showModal, setShowModal }) => {
     const { adminToken } = useAuthContext();
 
-    const initialData = {
-        name: "",
-        brand: ""
-    }
-    const [categoryData, setCategoryData] = useState(initialData)
+    // const initialData = {
+    //     name: "",
+    //     brand: ""
+    // }
+    // const [categoryData, setCategoryData] = useState(initialData)
     const [image, setImage] = useState("")
     const [data, setData] = useState();
     useEffect(() => {
@@ -51,6 +51,7 @@ const CategoryModal = ({ showModal, setShowModal }) => {
     const onChangeData = (e) => {
         setData(
             (values) => ({ ...values, [e.target.name]: e.target.value })
+           
         )
     }
     return (
