@@ -106,7 +106,7 @@ const CategoryModal = ({ showModal, setShowModal }) => {
                                 <button onClick={() => setShowModal({ show: false, update: false, data: undefined })} type="button" className="w-full flex align-middle items-center  focus:outline-none text-[#0064FF] justify-center focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 border"> Close</button>
                             </div>
                             <div className="w-1/2 flex justify-end">
-                                <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-[#0064FF] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2"> {showModal.update ? "Edit Category" : "Add Category"}</button>
+                                <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-[#0064FF] focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2"> {showModal.update ? "Save Category" : "Add Category"}</button>
                             </div>
                         </div>
                     </form>
