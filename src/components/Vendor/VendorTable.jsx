@@ -123,6 +123,7 @@ const VendorTable = ({ showModal, setShowModal }) => {
                     <input onChange={(e) => setPassword(e.target.value)} value={password} type="text" name="password" class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Password" required />
                     <input onChange={(e) => setConfPass(e.target.value)} value={confPass} type="text" name="password" class="mt-3 w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Confirm Password" required />
                     <button type="submit" className="mt-4 w-full text-white bg-[#0064FF] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
+                    <button onClick={() => setPasswordModal("")} type="button" className="mt-4 w-full text-white bg-red-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
                 </form>
             </main>}
         </>
