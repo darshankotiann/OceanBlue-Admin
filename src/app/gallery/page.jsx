@@ -7,7 +7,6 @@ import { useAuthContext } from '@/Context/AuthContext'
 import GalleryTable from '@/components/Gallery/GalleryTable'
 const Gallery = () => {
     const { adminToken } = useAuthContext();
-    console.log(adminToken)
     const [showModal, setShowModal] = useState(false);
     const [isuserLogin, setISUserLogin] = useState({ show: false, token: undefined });
 

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import UploadComponent from "../UploadComponent"
 import axios from "axios"
 import { useAuthContext } from "@/Context/AuthContext"
-const VendorModal = ({ showModal, setShowModal }) => {
+const UpdatePasswordVendor = ({ showModal, setShowModal }) => {
     const { adminToken } = useAuthContext();
 
     const initialData = {
@@ -11,6 +11,8 @@ const VendorModal = ({ showModal, setShowModal }) => {
         email: "",
         companyName: "",
         phoneNo: "",
+        password: ""
+
     }
     const [image, setImage] = useState("")
     const [data, setData] = useState(initialData);
@@ -105,6 +107,15 @@ const VendorModal = ({ showModal, setShowModal }) => {
                             </div>
                             <div className="grid grid-cols-2 py-3">
                                 <div className="w-full flex justify-center items-center">
+                                    <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Password</label>
+                                </div>
+                                <div className="w-full">
+                                    <input onChange={onChangeData} name="password" value={data?.password} type="text" class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Create Password"  />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 py-3">
+                                <div className="w-full flex justify-center items-center">
                                     <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Vendor Profile</label>
                                 </div>
                                 <div className="w-full">
@@ -130,4 +141,4 @@ const VendorModal = ({ showModal, setShowModal }) => {
         </>
     )
 }
-export default VendorModal
+export default UpdatePasswordVendor
