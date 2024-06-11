@@ -4,6 +4,7 @@ import CategoryModal from "../Modals/CategoryModal"
 import { useVendorContext } from "@/Context/VendorContext";
 import VendorModal from "../Modals/VendorModal";
 import axios from "axios";
+import { headers } from "../../../next.config";
 const VendorTable = ({ showModal, setShowModal }) => {
     const { vendorData } = useVendorContext();
     const [passwordModal, setPasswordModal] = useState("")
@@ -30,12 +31,17 @@ const VendorTable = ({ showModal, setShowModal }) => {
         if (confPass == password) {
             axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/vendor/password/${passwordModal}`, {
                 password
+            }, {
+                headers:{
+                    "Authorization": `Bearer ${localStorage.getItem("adminToken")}`
+                }
             })
                 .then((res) => {
                     window.location.reload()
                 })
                 .catch((err) => {
-                    alert("Something went wrong")
+                    console.log(err)
+                    // alert("Something went wrong")
                 })
         } else {
             alert("Password doesn't match")
