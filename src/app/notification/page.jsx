@@ -38,6 +38,7 @@ const Notification = () => {
 				axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/send`, { ...data, tokens })
 					.then((res) => {
 						alert("Notifications sent!")
+						window.location.reload()
 					})
 			} catch (error) {
 				alert("Network error!")
