@@ -8,7 +8,6 @@ import { useAuthContext } from '@/Context/AuthContext'
 import CategoryTable from '@/components/Category/CategoryTable'
 const Category = () => {
     const { adminToken } = useAuthContext();
-    console.log(adminToken)
     const [showModal, setShowModal] = useState({ show: false, update: false, data: undefined });
     const [isuserLogin, setISUserLogin] = useState({ show: false, token: undefined });
 

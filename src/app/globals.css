@@ -9,3 +9,9 @@
   ::-webkit-scrollbar {
     width: 0;
   }
+
+  .css-3w2yfm-ValueContainer{
+    max-height: 160px;
+    height: max-content;
+    overflow-y: auto !important;
+  }
