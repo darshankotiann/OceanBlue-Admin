@@ -1,13 +1,8 @@
-import { useState, useEffect } from "react"
 import axios from "axios";
-import { useAuthContext } from "@/Context/AuthContext"
 
 const SPSViewModal = ({ setShowModal, showModal }) => {
-    const { adminToken } = useAuthContext();
-    console.log(adminToken)
     const updateStatus = (e) => {
         e.preventDefault();
-        console.log(showModal.data._id)
         let headersList = {
             "Accept": "*/*",
             "Authorization": `Bearer ${localStorage.getItem('adminToken')}`

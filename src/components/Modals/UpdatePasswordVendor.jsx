@@ -22,7 +22,6 @@ const UpdatePasswordVendor = ({ showModal, setShowModal }) => {
             setImage(showModal?.data?.image)
         }
     }, [showModal])
-    console.log(data)
     const headers = {
         'authorization': `Bearer ${adminToken}`
     }
@@ -32,7 +31,6 @@ const UpdatePasswordVendor = ({ showModal, setShowModal }) => {
         if (showModal.update && showModal.data) {
             axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/vendor/${data?._id}`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
-                    console.log("Vendor is Updated Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
                     window.location.reload();
                 })
@@ -42,7 +40,6 @@ const UpdatePasswordVendor = ({ showModal, setShowModal }) => {
         } else {
             axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/vendor/signup`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
-                    console.log("Data is Added Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
                     window.location.reload();
                 })

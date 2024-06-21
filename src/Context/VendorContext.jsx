@@ -17,7 +17,6 @@ const VendorProvider = ({ children }) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vendor/get`,
                 { headers: headers })
                 .then((response) => {
-                    console.log(response.data)
                     setVendorData(response.data.response)
                 }).catch((error) => { console.log(error) })
         }

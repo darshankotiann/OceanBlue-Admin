@@ -6,7 +6,6 @@ import SPSEnquiryViewModal from "../Modals/SPSModal";
 
 const SPSEnquiryTable = () => {
     const { spsServiceRequests } = useSpsServiceRequestContext();
-    console.log(spsServiceRequests)
     const [showModal, setShowModal] = useState({ show: false, data: undefined })
     return (
         <>

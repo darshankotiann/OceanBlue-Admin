@@ -19,7 +19,6 @@ const UploadComponent = ({ image, setImage, onChangeData, type = "default", chil
             theme: "minimal"
         }, (err, res) => {
             if (res.event === "success") {
-                console.log(res)
                 setImage(res.info.url)
             }
         });

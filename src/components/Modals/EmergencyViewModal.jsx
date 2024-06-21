@@ -4,10 +4,8 @@ import { useAuthContext } from "@/Context/AuthContext"
 
 const EmergencyViewModal = ({ setShowModal, showModal }) => {
     const { adminToken } = useAuthContext();
-    console.log(adminToken)
     const updateStatus = (e) => {
         e.preventDefault();
-        console.log(showModal.data._id)
         let headersList = {
             "Accept": "*/*",
             "Authorization": `Bearer ${localStorage.getItem('adminToken')}`

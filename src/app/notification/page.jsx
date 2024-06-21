@@ -27,26 +27,21 @@ const Notification = () => {
 		e.preventDefault();
 		let toTokens = [];
 
-		if (listType == "vendor") {
-
-			toTokens = [...new Set(selectedVendors.map(item => item.fcmtoken).filter(token => token))];
-		} else {
-			toTokens = [...new Set(selectedVendors.map(item => item.vendorID.fcmtoken).filter(token => token))]
-		}
-		const data = {
-			title, desc: body, tokens: toTokens
-		};
-		console.log(data)
 		if (selectedVendors.length === 0) {
-			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/send-all`, data)
+			toTokens = [...new Set(selectedVendors.map(item => item.fcmtoken).filter(token => token))];
+			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/notification/send-all`, { title, desc: body, tokens: toTokens })
 				.then(() => alert("Notifications sent!"));
 		} else {
-			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/send`, { ...data, tokens: toTokens })
+			toTokens = [...new Set(selectedVendors.map(item => { return { _id: item.vendorID._id, fcmtoken: item.vendorID.fcmtoken } }))]
+			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/notification/send`, { title, desc: body, vendors: toTokens, type: filter == "" ? "all" : filter })
 				.then(() => {
 					alert("Notifications sent!");
 					window.location.reload();
 				})
-				.catch(() => alert("Network error!"));
+				.catch((err) => {
+					console.log(err)
+					alert("Network error!")
+				});
 		}
 	};
 

@@ -19,7 +19,6 @@ const UploadImgVideo = ({ image, setImage, onChangeData, type = "default", child
             theme: "minimal"
         }, (err, res) => {
             if (res.event === "success") {
-                console.log(res.info.secure_url,res.info.resource_type)
                 setImage({url:res.info.secure_url,type:res.info.resource_type})
             }
         });

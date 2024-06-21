@@ -16,7 +16,6 @@ const ResaleServiceRequestProvider = ({ children }) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/scrap/`,
                 { headers: headers })
                 .then((response) => {
-                    console.log(response.data)
                     setResaleServiceRequests(response.data.response)
                 }).catch((error) => { console.log(error) })
         }

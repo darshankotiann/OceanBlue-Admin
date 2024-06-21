@@ -16,7 +16,6 @@ const SpsServiceRequestProvider = ({ children }) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/sps/`,
                 { headers: headers })
                 .then((response) => {
-                    console.log(response.data)
                     setSpsServiceRequests(response.data.response)
                 }).catch((error) => { console.log(error) })
         }

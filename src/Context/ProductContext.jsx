@@ -11,7 +11,6 @@ const ProductProvider = ({ children }) => {
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/product/`)
             .then((response) => {
-                console.log(response.data.product)
                 setProducts(response.data.product)
             }).catch((error) => { console.log(error) })
     }, [])

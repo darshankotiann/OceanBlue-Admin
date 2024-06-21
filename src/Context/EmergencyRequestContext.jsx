@@ -16,7 +16,6 @@ const EmergencyServiceRequestProvider = ({ children }) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/emergency/`,
                 { headers: headers })
                 .then((response) => {
-                    console.log(response.data)
                     setEmergencyServiceRequests(response.data.response)
                 }).catch((error) => { console.log(error) })
         }

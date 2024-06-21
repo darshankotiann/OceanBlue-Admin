@@ -10,7 +10,6 @@ const GalleryTable = ({ showModal, setShowModal }) => {
         axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/gallery/`)
             .then((response) => {
                 setGallery(response.data.response)
-                console.log(response.data.response)
             }).catch((error) => { console.log(error) })
     }, [])
 

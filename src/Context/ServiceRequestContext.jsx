@@ -16,7 +16,6 @@ const ServiceRequestProvider = ({ children }) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/bookservice/`,
                 { headers: headers })
                 .then((response) => {
-                    console.log(response.data)
                     setServiceRequests(response.data.response)
                 }).catch((error) => { console.log(error) })
         }

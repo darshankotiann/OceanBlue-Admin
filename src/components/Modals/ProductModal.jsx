@@ -31,7 +31,6 @@ const ProductModal = ({ showModal, setShowModal }) => {
         if (showModal.update && showModal.data) {
             axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/${data._id}`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
-                    console.log("Product is Updated Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
                     window.location.reload();
                 })
@@ -41,7 +40,6 @@ const ProductModal = ({ showModal, setShowModal }) => {
         } else {
             axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/product/add`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
-                    console.log("Product is Added Successfully", res)
                     setShowModal({ show: false, update: false, data: undefined })
                     window.location.reload();
                 })
