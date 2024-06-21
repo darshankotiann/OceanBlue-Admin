@@ -10,7 +10,7 @@
     width: 0;
   }
 
-  .css-3w2yfm-ValueContainer{
+  .css-3w2yfm-ValueContainer,  .css-kr8nuw-control{
     max-height: 160px;
     height: max-content;
     overflow-y: auto !important;

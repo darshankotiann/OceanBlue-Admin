@@ -9,7 +9,7 @@ const NotificationProvider = ({ children }) => {
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/notification/`)
             .then((res) => {
-                setNotifications(res.data.notifications)
+                setNotifications(res.data.notifications.reverse())
             })
             .catch((err) => {
                 console.log(err)

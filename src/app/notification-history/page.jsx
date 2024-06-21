@@ -59,7 +59,7 @@ const NotificationHistory = () => {
                                                 {notification?.vendorID?.length}
                                             </td>
                                             <td class="px-6 py-4">
-                                                {moment(notification?.timestamp).format("DD-MM-YYYY / hh:mm a")}
+                                                {moment(notification?.timestamp).format("MMMM Do YYYY, h:mm a")}
                                             </td>
                                         </tr>
                                     )

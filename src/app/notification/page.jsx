@@ -27,12 +27,25 @@ const Notification = () => {
 		e.preventDefault();
 		let toTokens = [];
 
-		if (selectedVendors.length === 0) {
+		if (selectedVendors.length === 0 || listType == "vendor") {
 			toTokens = [...new Set(selectedVendors.map(item => item.fcmtoken).filter(token => token))];
 			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/notification/send-all`, { title, desc: body, tokens: toTokens })
-				.then(() => alert("Notifications sent!"));
+				.then(() => {
+					alert("Notifications sent!")
+					window.location.reload();
+				});
 		} else {
-			toTokens = [...new Set(selectedVendors.map(item => { return { _id: item.vendorID._id, fcmtoken: item.vendorID.fcmtoken } }))]
+			const toTokens = [...new Set(
+				selectedVendors
+				.map(item => {
+					const { _id, fcmtoken } = item.vendorID || {};
+					if (fcmtoken && fcmtoken.trim() !== "") {
+						return { _id, fcmtoken };
+					}
+					return null;
+				})
+				.filter(Boolean)
+			)];
 			axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/notification/send`, { title, desc: body, vendors: toTokens, type: filter == "" ? "all" : filter })
 				.then(() => {
 					alert("Notifications sent!");
